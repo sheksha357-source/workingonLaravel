@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\PaymentController;
@@ -38,3 +39,6 @@ Route::post('/users/{id}/restore', [UserController::class, 'restore'])->name('us
 Route::get('/payment', [PaymentController::class, 'index']);
 Route::post('/create-order', [PaymentController::class, 'createOrder']);
 Route::post('/verify-payment', [PaymentController::class, 'verify']);
+
+Route::get('/send-email', [EmailController::class, 'sendEmail']);
+Route::get('contact',[EmailController::class,'contact']);
